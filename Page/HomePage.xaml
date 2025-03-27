@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniprojectCross.Page.HomePage"
+             xmlns:viewmodel="clr-namespace:MiniprojectCross.ViewModel"
+             x:DataType="viewmodel:ShowDataStudent"
+             Title="หน้าหลัก">
+       <Grid>
+              <ScrollView>
+                     <VerticalStackLayout Spacing="15"
+                                          Padding="20">
+                            <!-- Header with logo and welcome message -->
+                            <Grid Margin="0,15,0,10">
+                                   <Grid.ColumnDefinitions>
+                                          <ColumnDefinition Width="Auto"/>
+                                          <ColumnDefinition Width="*"/>
+                                          <ColumnDefinition Width="Auto"/>
+                                   </Grid.ColumnDefinitions>
+                                   <!-- Welcome Message -->
+                                   <VerticalStackLayout Grid.Column="1"
+                                                        VerticalOptions="Center"
+                                                        Margin="15,0">
+                                          <!-- Welcome Message -->
+                                          <Label x:Name="WelcomeLabel"
+                                                 FontSize="22"
+                                                 FontAttributes="Bold"
+                                                 TextColor="White">
+                                                 <Label.Text>
+                                                        <MultiBinding StringFormat="ยินดีต้อนรับ, {0} {1}">
+                                                               <Binding Path="User.Student.Profile.Firstname"/>
+                                                               <Binding Path="User.Student.Profile.Lastname"/>
+                                                        </MultiBinding>
+                                                 </Label.Text>
+                                          </Label>
+                                          <Label x:Name="StudentIdLabel"
+                                                 Text="{Binding User.Student.Id, StringFormat='รหัสนิสิต : {0}'}"
+                                                 FontSize="14"
+                                                 TextColor="White"/>
+                                   </VerticalStackLayout>
+
+
+
+                                   <!-- Logout Button -->
+                                   <Button Grid.Column="2"
+                                           Text="ออกจากระบบ"
+                                           BackgroundColor="#FFFF3333"
+                                           TextColor="White"
+                                           HeightRequest="40"
+                                           WidthRequest="110"
+                                           FontSize="13"
+                                           CornerRadius="20"
+                                           VerticalOptions="Center"
+                                           Clicked="OnClickedLogin"/>
+                            </Grid>
+
+                            <!-- Profile Card -->
+                            <Frame BorderColor="#CCCCCC"
+                                   CornerRadius="15"
+                                   Padding="15"
+                                   HasShadow="True"
+                                   BackgroundColor="#E8F4FF"
+                                   Opacity="0.95"
+                                   WidthRequest="600"
+                                   Margin="0,5,0,10">
+                                   <Grid>
+                                          <Grid.ColumnDefinitions>
+                                                 <ColumnDefinition Width="Auto"/>
+                                                 <ColumnDefinition Width="*"/>
+                                          </Grid.ColumnDefinitions>
+
+                                          <!-- Profile Image -->
+                                          <Frame Grid.Column="2"
+                                                 BorderColor="#E8F4FF"
+                                                 CornerRadius="50"
+                                                 HeightRequest="100"
+                                                 WidthRequest="100"
+                                                 Padding="0"
+                                                 IsClippedToBounds="True"
+                                                 HorizontalOptions="Center"
+                                                 VerticalOptions="Center">
+                                                 <Image Source="{Binding User.Student.Profile.ProfileImage}"
+                                                        Aspect="AspectFill"
+                                                        HeightRequest="100"
+                                                        WidthRequest="100"/>
+                                          </Frame>
+
+                                          <!-- Profile Info -->
+                                          <VerticalStackLayout Grid.Column="1"
+                                                               Margin="15,0,0,0"
+                                                               Spacing="8">
+
+                                                 <!-- View Profile Button -->
+                                                 <Button Text="ดูข้อมูลโปรไฟล์"
+                                                         BackgroundColor="#FFFFEE8A"
+                                                         TextColor="#333333"
+                                                         CornerRadius="20"
+                                                         FontSize="13"
+                                                         HeightRequest="38"
+                                                         HorizontalOptions="Start"
+                                                         Margin="0,5,0,0"
+                                                         FontAttributes="Bold"
+                                                         WidthRequest="150"
+                                                         Clicked="OnDetailsClickedProfile"/>
+                                          </VerticalStackLayout>
+                                   </Grid>
+                            </Frame>
+                            <Grid ColumnSpacing="8"
+                                  RowSpacing="8"
+                                  HorizontalOptions="Center">
+                                   <Grid.RowDefinitions>
+                                          <RowDefinition Height="Auto"/>
+                                          <RowDefinition Height="Auto"/>
+                                   </Grid.RowDefinitions>
+                                   <Grid.ColumnDefinitions>
+                                          <ColumnDefinition Width="*"/>
+                                          <ColumnDefinition Width="*"/>
+                                   </Grid.ColumnDefinitions>
+
+                                   <!-- Current Term Registration Card -->
+                                   <Frame Grid.Row="0"
+                                          Grid.Column="0"
+                                          BorderColor="#CCCCCC"
+                                          CornerRadius="12"
+                                          Padding="15"
+                                          HasShadow="True"
+                                          WidthRequest="400"
+                                          BackgroundColor="#E8F4FF"
+                                          Opacity="0.95">
+                                          <VerticalStackLayout Spacing="10">
+                                                 <Label Text="ข้อมูลลงทะเบียน&#10;เทอมปัจจุบัน"
+                                                        FontSize="16"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        HorizontalOptions="Center"
+                                                        HorizontalTextAlignment="Center"/>
+                                                 <Button Text="ดูรายละเอียด"
+                                                         BackgroundColor="#FFFFEE8A"
+                                                         TextColor="#333333"
+                                                         CornerRadius="20"
+                                                         FontSize="13"
+                                                         HeightRequest="40"
+                                                         WidthRequest="100"
+                                                         FontAttributes="Bold"
+                                                         Clicked="OnDetailsClicked"/>
+                                          </VerticalStackLayout>
+                                   </Frame>
+
+                                   <!-- Previous Term Registration Card -->
+                                   <Frame Grid.Row="0"
+                                          Grid.Column="1"
+                                          BorderColor="#CCCCCC"
+                                          CornerRadius="12"
+                                          Padding="15"
+                                          WidthRequest="400"
+                                          HasShadow="True"
+                                          BackgroundColor="#E8F4FF"
+                                          Opacity="0.95">
+                                          <VerticalStackLayout Spacing="10">
+                                                 <Label Text="ข้อมูลลงทะเบียน&#10;เทอมก่อนหน้า"
+                                                        FontSize="16"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        HorizontalOptions="Center"
+                                                        HorizontalTextAlignment="Center"/>
+                                                 <Button Text="ดูประวัติ"
+                                                         BackgroundColor="#FFFFEE8A"
+                                                         TextColor="#333333"
+                                                         CornerRadius="20"
+                                                         FontSize="13"
+                                                         HeightRequest="40"
+                                                         WidthRequest="100"
+                                                         FontAttributes="Bold"
+                                                         Clicked="OnHistoryButtonClicked"/>
+                                          </VerticalStackLayout>
+                                   </Frame>
+
+                                   <!-- Search and Enroll Card -->
+                                   <Frame Grid.Row="1"
+                                          Grid.Column="0"
+                                          BorderColor="#CCCCCC"
+                                          CornerRadius="12"
+                                          Padding="15"
+                                          HasShadow="True"
+                                          WidthRequest="400"
+                                          BackgroundColor="#E8F4FF"
+                                          Opacity="0.95">
+                                          <VerticalStackLayout Spacing="10">
+                                                 <Label Text="ค้นหาและ&#10;ลงทะเบียนรายวิชา"
+                                                        FontSize="16"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        HorizontalOptions="Center"
+                                                        HorizontalTextAlignment="Center"/>
+                                                 <Button Text="ลงทะเบียนเรียน"
+                                                         BackgroundColor="#FFFFEE8A"
+                                                         TextColor="#333333"
+                                                         CornerRadius="20"
+                                                         FontSize="13"
+                                                         HeightRequest="40"
+                                                         WidthRequest="120"
+                                                         FontAttributes="Bold"
+                                                         Clicked="OnCourseButtonClicked"/>
+                                          </VerticalStackLayout>
+                                   </Frame>
+
+                                   <!-- Withdraw Course Card -->
+                                   <Frame Grid.Row="1"
+                                          Grid.Column="1"
+                                          BorderColor="#CCCCCC"
+                                          CornerRadius="12"
+                                          Padding="15"
+                                          HasShadow="True"
+                                          WidthRequest="400"
+                                          BackgroundColor="#E8F4FF"
+                                          Opacity="0.95">
+                                          <VerticalStackLayout Spacing="10">
+                                                 <Label Text="ถอนรายวิชา&#10;ลงทะเบียน"
+                                                        FontSize="16"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        HorizontalOptions="Center"
+                                                        HorizontalTextAlignment="Center"/>
+                                                 <Button Text="ถอนรายวิชา"
+                                                         BackgroundColor="#FFFFEE8A"
+                                                         TextColor="#333333"
+                                                         CornerRadius="20"
+                                                         FontSize="13"
+                                                         HeightRequest="40"
+                                                         WidthRequest="100"
+                                                         FontAttributes="Bold"
+                                                         Clicked="OnWithdawalButtonClicked"/>
+                                          </VerticalStackLayout>
+                                   </Frame>
+                            </Grid>
+                     </VerticalStackLayout>
+              </ScrollView>
+       </Grid>
+</ContentPage>

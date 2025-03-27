@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniprojectCross.Page.PastTermRegistrationPage"
+             xmlns:viewmodel="clr-namespace:MiniprojectCross.ViewModel"
+             xmlns:model="clr-namespace:MiniprojectCross.Model"
+             x:DataType="viewmodel:ShowDataStudent">
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Spacing="20"
+                                 Padding="25">
+                <!-- Header Section -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0"
+                            Text="← กลับ"
+                            BackgroundColor="#FFFFEE8A"
+                            TextColor="#333333"
+                            HeightRequest="45"
+                            WidthRequest="100"
+                            FontSize="15"
+                            CornerRadius="25"
+                            VerticalOptions="Center"
+                            Clicked="OnClickedHome"/>
+
+                </Grid>
+
+                <!-- Term Selector Card -->
+                <Frame BorderColor="#CCCCCC"
+                       CornerRadius="20"
+                       Padding="25"
+                       HasShadow="True"
+                       WidthRequest="500"
+                       BackgroundColor="#E8F4FF"
+                       Opacity="0.95">
+                    <VerticalStackLayout Spacing="20">
+                        <Label Text="เลือกภาคการศึกษา"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#333333"
+                               HorizontalOptions="Center"/>
+
+                        <HorizontalStackLayout Spacing="15"
+                                               HorizontalOptions="Center">
+                            <VerticalStackLayout>
+                                <Button x:Name="Semester1Button"
+                                        Text="{Binding PreviousSemester1Display}"
+                                        BackgroundColor="#f5f5f5"
+                                        TextColor="#333333"
+                                        BorderColor="#CCCCCC"
+                                        BorderWidth="1"
+                                        CornerRadius="15"
+                                        HeightRequest="55"
+                                        WidthRequest="100"
+                                        Command="{Binding SelectSemesterCommand}"
+                                        CommandParameter="{Binding User.PreviousSemesters[0]}">
+                                    <!-- Data Trigger remains the same -->
+                                </Button>
+                                <Label Text="เทอมล่าสุด"
+                                       FontSize="12"
+                                       TextColor="#333333"
+                                       HorizontalOptions="Center"
+                                       Margin="0,10,0,0"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout>
+                                <Button x:Name="Semester2Button"
+                                        Text="{Binding PreviousSemester2Display}"
+                                        BackgroundColor="#f5f5f5"
+                                        TextColor="#333333"
+                                        BorderColor="#CCCCCC"
+                                        BorderWidth="1"
+                                        CornerRadius="15"
+                                        HeightRequest="55"
+                                        WidthRequest="100"
+                                        Command="{Binding SelectSemesterCommand}"
+                                        CommandParameter="{Binding User.PreviousSemesters[1]}">
+                                    <!-- Data Trigger remains the same -->
+                                </Button>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout>
+                                <Button x:Name="Semester3Button"
+                                        Text="{Binding PreviousSemester3Display}"
+                                        BackgroundColor="#f5f5f5"
+                                        TextColor="#333333"
+                                        BorderColor="#CCCCCC"
+                                        BorderWidth="1"
+                                        CornerRadius="15"
+                                        HeightRequest="55"
+                                        WidthRequest="100"
+                                        Command="{Binding SelectSemesterCommand}"
+                                        CommandParameter="{Binding User.PreviousSemesters[2]}">
+                                    <!-- Data Trigger remains the same -->
+                                </Button>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame BorderColor="#007BFF"
+                       CornerRadius="20"
+                       Padding="25"
+                       HasShadow="True"
+                       WidthRequest="300"
+                       BackgroundColor="#E8F4FF"
+                       Opacity="0.95">
+                    <VerticalStackLayout Spacing="15">
+                        <!-- Semester Display -->
+                        <Label Text="{Binding SelectedPreviousSemesterDisplay}"
+                               FontSize="22"
+                               FontAttributes="Bold"
+                               TextColor="#333333"
+                               HorizontalOptions="Center"/>
+
+                        <!-- Summary Statistics -->
+                        <HorizontalStackLayout Spacing="25"
+                                               HorizontalOptions="Center">
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="รายวิชา"
+                                       FontSize="15"
+                                       TextColor="#555555"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="{Binding SelectedPreviousSemester.Subjects.Count}"
+                                       FontSize="30"
+                                       FontAttributes="Bold"
+                                       TextColor="#333333"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="วิชา"
+                                       FontSize="15"
+                                       TextColor="#555555"
+                                       HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="หน่วยกิต"
+                                       FontSize="15"
+                                       TextColor="#555555"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="{Binding SelectedPreviousSemester.TotalCredits}"
+                                       FontSize="30"
+                                       FontAttributes="Bold"
+                                       TextColor="#333333"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="นก."
+                                       FontSize="15"
+                                       TextColor="#555555"
+                                       HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout HorizontalOptions="Center">
+                                <Label Text="เกรดเฉลี่ย"
+                                       FontSize="15"
+                                       TextColor="#555555"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="{Binding SelectedPreviousSemester.Gpa}"
+                                       FontSize="30"
+                                       FontAttributes="Bold"
+                                       TextColor="#333333"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="GPA"
+                                       FontSize="15"
+                                       TextColor="#555555"
+                                       HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Registered Courses Card -->
+                <Frame BorderColor="#007BFF"
+                       CornerRadius="20"
+                       Padding="25"
+                       HasShadow="True"
+                       BackgroundColor="#E8F4FF"
+                       Opacity="1">
+                    <VerticalStackLayout Spacing="20">
+                        <Label Text="📘 รายวิชาที่ลงทะเบียน"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="#007BFF"
+                               HorizontalOptions="Start"/>
+
+                        <CollectionView ItemsSource="{Binding PreviousSemesterSubjects}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="model:PreviousSemesterSubject">
+                                    <Frame BorderColor="#CCCCCC"
+                                           CornerRadius="15"
+                                           Padding="20"
+                                           HasShadow="True"
+                                           BackgroundColor="White"
+                                           Margin="0,10">
+                                        <Grid ColumnSpacing="20">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <VerticalStackLayout Grid.Column="0"
+                                                                 Spacing="8">
+                                                <Label Text="{Binding Id}"
+                                                       FontSize="18"
+                                                       FontAttributes="Bold"
+                                                       TextColor="#333333"/>
+                                                <Label Text="{Binding Name}"
+                                                       FontSize="16"
+                                                       TextColor="#333333"/>
+                                                <Label Text="{Binding NameEng}"
+                                                       FontSize="14"
+                                                       TextColor="#666666"/>
+
+                                                <HorizontalStackLayout Spacing="10">
+                                                    <Label Text="{Binding Credits, StringFormat='{0} หน่วยกิต'}"
+                                                           FontSize="14"
+                                                           TextColor="#555555"/>
+                                                    <Label Text="•"
+                                                           FontSize="14"
+                                                           TextColor="#AAAAAA"/>
+                                                    <Label Text="{Binding Instructor}"
+                                                           FontSize="14"
+                                                           TextColor="#555555"/>
+                                                </HorizontalStackLayout>
+                                            </VerticalStackLayout>
+
+                                            <Frame Grid.Column="1"
+                                                   BorderColor="{Binding Grade}"
+                                                   CornerRadius="25"
+                                                   HeightRequest="50"
+                                                   WidthRequest="50"
+                                                   HasShadow="True"
+                                                   Padding="0"
+                                                   VerticalOptions="Center">
+                                                <Label Text="{Binding Grade}"
+                                                       TextColor="{Binding Grade}"
+                                                       FontSize="20"
+                                                       FontAttributes="Bold"
+                                                       HorizontalOptions="Center"
+                                                       VerticalOptions="Center"/>
+                                            </Frame>
+                                        </Grid>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniprojectCross.Page.LoginPage"
+             Title="ระบบลงทะเบียนเรียน">
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Spacing="20"
+                                 Padding="30"
+                                 VerticalOptions="Center">
+                <!-- Compact Login Form with yellow-gray theme -->
+                <Frame BorderColor="#CCCCCC"
+                       CornerRadius="15"
+                       Padding="20"
+                       HasShadow="True"
+                       BackgroundColor="#FFFFEE"
+                       Opacity="0.95"
+                       WidthRequest="750"
+                       HorizontalOptions="Center"
+                       Margin="0,20,0,20">
+                    <VerticalStackLayout Spacing="12">
+                        <!-- Email Field -->
+                        <Label Text="Email"
+                               FontSize="14"
+                               TextColor="#444444"
+                               FontAttributes="Bold"
+                               Margin="0,0,0,-5"/>
+
+                        <Frame BorderColor="#DDDDDD"
+                               Padding="12,0"
+                               HasShadow="False"
+                               CornerRadius="8"
+                               BackgroundColor="#FFFEF5"
+                               HeightRequest="45">
+                            <Entry x:Name="EmailEntry"
+                                   PlaceholderColor="#AAAAAA"
+                                   TextColor="#333333"
+                                   Keyboard="Email"
+                                   ReturnType="Next"
+                                   VerticalOptions="Center"
+                                   FontSize="14"/>
+                        </Frame>
+
+                        <!-- Password Field -->
+                        <Label Text="Password"
+                               FontSize="14"
+                               TextColor="#444444"
+                               FontAttributes="Bold"
+                               Margin="0,0,0,-5"/>
+
+                        <Frame BorderColor="#DDDDDD"
+                               Padding="12,0"
+                               HasShadow="False"
+                               CornerRadius="8"
+                               BackgroundColor="#FFFEF5"
+                               HeightRequest="45">
+                            <Entry x:Name="PasswordEntry"
+                                   IsPassword="True"
+                                   PlaceholderColor="#AAAAAA"
+                                   TextColor="#333333"
+                                   ReturnType="Done"
+                                   VerticalOptions="Center"
+                                   FontSize="14"/>
+                        </Frame>
+                        <!-- Login Button with university colors -->
+                        <Button x:Name="LoginButton"
+                                Text="เข้าสู่ระบบ"
+                                BackgroundColor="#FFD700"
+                                TextColor="#333333"
+                                FontAttributes="Bold"
+                                Margin="0,8,0,5"
+                                HeightRequest="46"
+                                CornerRadius="23"/>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Version info -->
+                <Label Text="Version 1.0.0"
+                       HorizontalOptions="Center"
+                       TextColor="#444444"
+                       FontSize="12"
+                       Opacity="0.8"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

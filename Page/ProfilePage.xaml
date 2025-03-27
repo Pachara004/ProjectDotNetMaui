@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiniprojectCross.Page.ProfilePage"
+             xmlns:viewmodel="clr-namespace:MiniprojectCross.ViewModel"
+             x:DataType="viewmodel:ShowDataStudent">
+       <Grid>
+
+              <ScrollView>
+                     <VerticalStackLayout Spacing="20"
+                                          Padding="20">
+                            <!-- Header with back button -->
+                            <Grid Margin="0,15,0,10">
+                                   <Grid.ColumnDefinitions>
+                                          <ColumnDefinition Width="Auto"/>
+                                          <ColumnDefinition Width="*"/>
+                                          <ColumnDefinition Width="Auto"/>
+                                   </Grid.ColumnDefinitions>
+
+                                   <!-- Back Button -->
+                                   <Button Grid.Column="0"
+                                           Text="&#x2190; กลับ"
+                                           BackgroundColor="#FFFFEE8A"
+                                           TextColor="#333333"
+                                           HeightRequest="40"
+                                           WidthRequest="90"
+                                           FontSize="14"
+                                           CornerRadius="20"
+                                           VerticalOptions="Start"
+                                           Clicked="OnDetailsClickedback"/>
+                            </Grid>
+
+                            <!-- Profile Photo and Cover Section -->
+                            <Frame BorderColor="#CCCCCC"
+                                   CornerRadius="15"
+                                   Padding="0"
+                                   HasShadow="True"
+                                   BackgroundColor="#E8F4FF"
+                                   Opacity="0.95"
+                                   HeightRequest="200"
+                                   WidthRequest="500">
+                                   <Grid>
+                                          <!-- Decorative Elements for Cover -->
+                                          <BoxView Color="White"
+                                                   Opacity="0.1"
+                                                   HeightRequest="100"
+                                                   WidthRequest="100"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Start"
+                                                   CornerRadius="50"
+                                                   Margin="20,20,0,0"/>
+
+                                          <BoxView Color="White"
+                                                   Opacity="0.1"
+                                                   HeightRequest="70"
+                                                   WidthRequest="70"
+                                                   HorizontalOptions="End"
+                                                   VerticalOptions="Start"
+                                                   CornerRadius="35"
+                                                   Margin="0,30,40,0"/>
+
+                                          <!-- Profile Photo and Labels -->
+                                          <VerticalStackLayout VerticalOptions="Start"
+                                                               HorizontalOptions="Center">
+                                                 <Frame BorderColor="White"
+                                                        BackgroundColor="White"
+                                                        CornerRadius="60"
+                                                        HeightRequest="120"
+                                                        WidthRequest="120"
+                                                        Padding="4"
+                                                        IsClippedToBounds="True"
+                                                        HasShadow="True">
+                                                        <Frame BorderColor="#FFD700"
+                                                               CornerRadius="56"
+                                                               Padding="0"
+                                                               IsClippedToBounds="True"
+                                                               HasShadow="False">
+                                                               <Image Source="{Binding User.Student.Profile.ProfileImage}"
+                                                                      Aspect="AspectFill"
+                                                                      HeightRequest="112"
+                                                                      WidthRequest="112"/>
+                                                        </Frame>
+                                                 </Frame>
+
+                                                 <Label x:Name="FullNameLabel"
+                                                        Text="{Binding FullName, StringFormat='นาย {0}'}"
+                                                        FontSize="24"
+                                                        FontAttributes="Bold"
+                                                        TextColor="#333333"
+                                                        HorizontalOptions="Center"/>
+
+                                                 <HorizontalStackLayout HorizontalOptions="Center">
+                                                        <Label x:Name="StudentIdLabel"
+                                                               Text="{Binding User.Student.Id, StringFormat='รหัสนิสิต : {0}'}"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"
+                                                               TextColor="#333333"/>
+                                                 </HorizontalStackLayout>
+                                          </VerticalStackLayout>
+                                   </Grid>
+                            </Frame>
+
+
+                            <!-- Student Information Card -->
+                            <Frame BorderColor="#CCCCCC"
+                                   CornerRadius="15"
+                                   Padding="20"
+                                   HasShadow="True"
+                                   BackgroundColor="#E8F4FF"
+                                   Opacity="0.95"
+                                   Margin="0,5,0,10"
+                                   HeightRequest="200"
+                                   WidthRequest="800">
+                                   <VerticalStackLayout Spacing="15">
+                                          <Label Text="ข้อมูลนิสิต"
+                                                 FontSize="18"
+                                                 FontAttributes="Bold"
+                                                 TextColor="#333333"/>
+
+                                          <Grid RowSpacing="15"
+                                                ColumnSpacing="30">
+                                                 <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                 </Grid.RowDefinitions>
+                                                 <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="1*"/>
+                                                        <ColumnDefinition Width="1*"/>
+                                                 </Grid.ColumnDefinitions>
+
+                                                 <!-- Left Column -->
+                                                 <VerticalStackLayout Grid.Row="0"
+                                                                      Grid.Column="0"
+                                                                      Spacing="10">
+                                                        <!-- Student ID -->
+                                                        <HorizontalStackLayout>
+                                                               <Label Text="รหัสนิสิต:"
+                                                                      FontSize="15"
+                                                                      TextColor="#555555"
+                                                                      VerticalOptions="Center"/>
+                                                               <Label x:Name="StudentIdValueLabel"
+                                                                      Text="{Binding User.Student.Id}"
+                                                                      FontSize="15"
+                                                                      TextColor="#333333"
+                                                                      FontAttributes="Bold"
+                                                                      VerticalOptions="Center"/>
+                                                        </HorizontalStackLayout>
+
+                                                        <!-- Thai Name -->
+                                                        <HorizontalStackLayout>
+                                                               <Label Text="ชื่อ-นามสกุล:"
+                                                                      FontSize="15"
+                                                                      TextColor="#555555"
+                                                                      VerticalOptions="Center"/>
+                                                               <Label x:Name="ThaiNameLabel"
+                                                                      Text="{Binding FullName, StringFormat='นาย{0}'}"
+                                                                      FontSize="15"
+                                                                      TextColor="#333333"
+                                                                      FontAttributes="Bold"
+                                                                      VerticalOptions="Center"/>
+                                                        </HorizontalStackLayout>
+
+                                                        <!-- English Name -->
+                                                        <HorizontalStackLayout>
+                                                               <Label Text="ชื่ออังกฤษ:"
+                                                                      FontSize="15"
+                                                                      TextColor="#555555"
+                                                                      VerticalOptions="Center"/>
+                                                               <Label x:Name="EngNameLabel"
+                                                                      Text="Mr.Pachara Wongsasri"
+                                                                      FontSize="15"
+                                                                      TextColor="#333333"
+                                                                      FontAttributes="Bold"
+                                                                      VerticalOptions="Center"/>
+                                                        </HorizontalStackLayout>
+                                                 </VerticalStackLayout>
+
+                                                 <!-- Right Column -->
+                                                 <VerticalStackLayout Grid.Row="0"
+                                                                      Grid.Column="1"
+                                                                      Spacing="10">
+                                                        <!-- Faculty -->
+                                                        <HorizontalStackLayout>
+                                                               <Label Text="คณะ:"
+                                                                      FontSize="15"
+                                                                      TextColor="#555555"
+                                                                      VerticalOptions="Center"/>
+                                                               <Label x:Name="FacultyValueLabel"
+                                                                      Text="{Binding User.Student.Profile.Faculty , StringFormat='คณะ{0}'}"
+                                                                      FontSize="15"
+                                                                      TextColor="#333333"
+                                                                      FontAttributes="Bold"
+                                                                      VerticalOptions="Center"/>
+                                                        </HorizontalStackLayout>
+
+                                                        <!-- Major -->
+                                                        <HorizontalStackLayout>
+                                                               <Label Text="สาขาวิชา:"
+                                                                      FontSize="15"
+                                                                      TextColor="#555555"
+                                                                      VerticalOptions="Center"/>
+                                                               <Label x:Name="MajorValueLabel"
+                                                                      Text="{Binding User.Student.Profile.Department}"
+                                                                      FontSize="15"
+                                                                      TextColor="#333333"
+                                                                      FontAttributes="Bold"
+                                                                      VerticalOptions="Center"/>
+                                                        </HorizontalStackLayout>
+
+                                                        <!-- Study Year -->
+                                                        <HorizontalStackLayout>
+                                                               <Label Text="ชั้นปี:"
+                                                                      FontSize="15"
+                                                                      TextColor="#555555"
+                                                                      VerticalOptions="Center"/>
+                                                               <Label x:Name="YearValueLabel"
+                                                                      Text="{Binding User.Student.Profile.Year}"
+                                                                      FontSize="15"
+                                                                      TextColor="#333333"
+                                                                      FontAttributes="Bold"
+                                                                      VerticalOptions="Center"/>
+                                                        </HorizontalStackLayout>
+                                                 </VerticalStackLayout>
+                                          </Grid>
+                                   </VerticalStackLayout>
+                            </Frame>
+
+
+                            <!-- Contact Information Card -->
+                            <Frame BorderColor="#CCCCCC"
+                                   CornerRadius="15"
+                                   Padding="20"
+                                   HasShadow="True"
+                                   BackgroundColor="#E8F4FF"
+                                   Opacity="0.95"
+                                   Margin="0,5,0,10"
+                                   HeightRequest="220"
+                                   WidthRequest="800">
+                                   <VerticalStackLayout Spacing="15">
+                                          <Label Text="ข้อมูลติดต่อ"
+                                                 FontSize="18"
+                                                 FontAttributes="Bold"
+                                                 TextColor="#333333"/>
+
+                                          <Grid RowSpacing="15"
+                                                ColumnSpacing="15">
+                                                 <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                 </Grid.RowDefinitions>
+                                                 <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="120"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                 </Grid.ColumnDefinitions>
+
+                                                 <!-- Row 1: Email -->
+                                                 <Label Grid.Row="0"
+                                                        Grid.Column="0"
+                                                        Text="อีเมล:"
+                                                        FontSize="15"
+                                                        TextColor="#555555"
+                                                        VerticalOptions="Center"/>
+                                                 <Label Grid.Row="0"
+                                                        Grid.Column="1"
+                                                        x:Name="EmailLabel"
+                                                        Text="{Binding User.Student.Email}"
+                                                        FontSize="15"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        VerticalOptions="Center"/>
+
+                                                 <!-- Row 2: Phone -->
+                                                 <Label Grid.Row="1"
+                                                        Grid.Column="0"
+                                                        Text="เบอร์โทรศัพท์:"
+                                                        FontSize="15"
+                                                        TextColor="#555555"
+                                                        VerticalOptions="Center"/>
+                                                 <Label Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        x:Name="PhoneLabel"
+                                                        Text="{Binding User.Student.Profile.PhoneNumber}"
+                                                        FontSize="15"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        VerticalOptions="Center"/>
+
+                                                 <!-- Row 3: Address -->
+                                                 <Label Grid.Row="2"
+                                                        Grid.Column="0"
+                                                        Text="ที่อยู่:"
+                                                        FontSize="15"
+                                                        TextColor="#555555"
+                                                        VerticalOptions="Start"/>
+                                                 <Label Grid.Row="2"
+                                                        Grid.Column="1"
+                                                        x:Name="AddressLabel"
+                                                        Text="{Binding User.Student.Profile.Address}"
+                                                        FontSize="15"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        VerticalOptions="Center"/>
+
+                                                 <!-- Row 4: Emergency Contact -->
+                                                 <Label Grid.Row="3"
+                                                        Grid.Column="0"
+                                                        Text="วันเกิด:"
+                                                        FontSize="15"
+                                                        TextColor="#555555"
+                                                        VerticalOptions="Center"/>
+                                                 <Label Grid.Row="3"
+                                                        Grid.Column="1"
+                                                        x:Name="EmergencyContactLabel"
+                                                        Text="{Binding User.Student.Profile.Birthdate}"
+                                                        FontSize="15"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        VerticalOptions="Center"/>
+                                          </Grid>
+                                   </VerticalStackLayout>
+                            </Frame>
+
+                            <!-- Academic Information Card -->
+                            <Frame BorderColor="#CCCCCC"
+                                   CornerRadius="15"
+                                   Padding="20"
+                                   HasShadow="True"
+                                   BackgroundColor="#E8F4FF"
+                                   Opacity="0.95"
+                                   Margin="0,5,0,10"
+                                   HeightRequest="220"
+                                   WidthRequest="800">
+                                   <VerticalStackLayout Spacing="15">
+                                          <Label Text="ข้อมูลการศึกษา"
+                                                 FontSize="18"
+                                                 FontAttributes="Bold"
+                                                 TextColor="#333333"/>
+
+                                          <Grid RowSpacing="15"
+                                                ColumnSpacing="15">
+                                                 <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                 </Grid.RowDefinitions>
+                                                 <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="150"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                 </Grid.ColumnDefinitions>
+
+                                                 <!-- Row 1: Status -->
+                                                 <Label Grid.Row="0"
+                                                        Grid.Column="0"
+                                                        Text="สถานภาพการศึกษา:"
+                                                        FontSize="15"
+                                                        TextColor="#555555"
+                                                        VerticalOptions="Center"/>
+                                                 <Label Grid.Row="0"
+                                                        Grid.Column="1"
+                                                        x:Name="StatusLabel"
+                                                        Text="{Binding User.Student.Profile.StudentType}"
+                                                        FontSize="15"
+                                                        TextColor="#009900"
+                                                        FontAttributes="Bold"
+                                                        VerticalOptions="Center"/>
+
+                                                 <!-- Row 2: Admission Year -->
+                                                 <Label Grid.Row="1"
+                                                        Grid.Column="0"
+                                                        Text="ปีที่เข้าศึกษา:"
+                                                        FontSize="15"
+                                                        TextColor="#555555"
+                                                        VerticalOptions="Center"/>
+                                                 <Label Grid.Row="1"
+                                                        Grid.Column="1"
+                                                        x:Name="AdmissionYearLabel"
+                                                        Text="{Binding User.Student.Profile.EntryYear}"
+                                                        FontSize="15"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        VerticalOptions="Center"/>
+
+                                                 <!-- Row 3: GPAX -->
+                                                 <Label Grid.Row="2"
+                                                        Grid.Column="0"
+                                                        Text="GPAX:"
+                                                        FontSize="15"
+                                                        TextColor="#555555"
+                                                        VerticalOptions="Center"/>
+                                                 <Label Grid.Row="2"
+                                                        Grid.Column="1"
+                                                        x:Name="GPAXLabel"
+                                                        Text="{Binding User.Student.Profile.Gpax}"
+                                                        FontSize="15"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        VerticalOptions="Center"/>
+
+                                                 <!-- Row 4: Total Credits -->
+                                                 <Label Grid.Row="3"
+                                                        Grid.Column="0"
+                                                        Text="จำนวนหน่วยกิตสะสม:"
+                                                        FontSize="15"
+                                                        TextColor="#555555"
+                                                        VerticalOptions="Center"/>
+                                                 <Label Grid.Row="3"
+                                                        Grid.Column="1"
+                                                        x:Name="CreditsLabel"
+                                                        Text="96 / 145 หน่วยกิต"
+                                                        FontSize="15"
+                                                        TextColor="#333333"
+                                                        FontAttributes="Bold"
+                                                        VerticalOptions="Center"/>
+                                          </Grid>
+
+                                          <!-- GPAX Progress Bar -->
+                                          <VerticalStackLayout Spacing="5"
+                                                               Margin="0,10,0,0">
+                                                 <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                               <ColumnDefinition Width="*"/>
+                                                               <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                 </Grid>
+                                          </VerticalStackLayout>
+                                   </VerticalStackLayout>
+                            </Frame>
+                     </VerticalStackLayout>
+              </ScrollView>
+       </Grid>
+</ContentPage>

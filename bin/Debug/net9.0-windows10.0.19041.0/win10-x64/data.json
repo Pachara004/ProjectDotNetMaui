@@ -1,0 +1,398 @@
+{
+  "student": {
+    "id": "65011212230",
+    "email": "65011212230@msu.ac.th",
+    "password": "password123",
+    "profile": {
+      "firstname": "พชร",
+      "lastname": "วงษาศรี",
+      "nickname": "ชาย",
+      "faculty": "วิทยาการสารสนเทศ",
+      "department": "วิทยาการคอมพิวเตอร์",
+      "year": 3,
+      "advisor": "รศ.ดร.ตะวัน จุ๊บๆ",
+      "gpax": 1.00,
+      "status": "กำลังศึกษา",
+      "studentType": "ภาคปกติ",
+      "entryYear": 2022,
+      "birthdate": "13-01-2004",
+      "phoneNumber": "0990094187",
+      "address": "251 หมู่ 2 ต.โพนสวรรค์ อ.โพนสวรรค์ จ.นครพนม 48190",
+      "profileImage": "https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-6/473711393_1788364268607902_8282033235647187225_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=b3D3E9O2sWkQ7kNvgHnppcc&_nc_oc=AdkW_FhiG4UGdTcHid_amrco6D_4XXBjngUROZNCQ_15aDtQYLOueoCB0aRM83VhvWk&_nc_zt=23&_nc_ht=scontent-bkk1-1.xx&_nc_gid=i2900maN_z16APtmfUqBrg&oh=00_AYEN6sSpXXjHOaPeJNA6UBRKy9w8r13Q7VZd0ClvS9M7Rw&oe=67EAD867"
+    }
+  },
+  "currentSemester": {
+    "academicYear": 2023,
+    "term": 2,
+    "registrationStatus": "ลงทะเบียนแล้ว",
+    "paymentStatus": "ชำระเงินแล้ว",
+    "registrationDate": "2023-12-20T09:15:23",
+    "totalCredits": 10,
+    "totalFee": 21000,
+    "subjects": [
+      {
+        "id": "CS001",
+        "name": "การออกแบบฐานข้อมูล",
+        "nameEng": "Database Design",
+        "section": 1,
+        "credits": 3,
+        "grade": null,
+        "instructor": "รศ.ดร.เอกชัย พัฒนา",
+        "schedule": [
+          {
+            "day": "อังคาร",
+            "time": "13:00-16:00",
+            "room": "IT-101"
+          }
+        ],
+        "midtermExam": "2024-02-15T13:00:00",
+        "finalExam": "2024-03-20T09:00:00",
+        "status": "กำลังเรียน"
+      },
+      {
+        "id": "CS002",
+        "name": "การวิเคราะห์ซอฟต์แวร์",
+        "nameEng": "Software Analysis",
+        "section": 2,
+        "credits": 3,
+        "grade": null,
+        "instructor": "ผศ.ดร.นฤมล สุขสันต์",
+        "schedule": [
+          {
+            "day": "พุธ",
+            "time": "09:00-12:00",
+            "room": "IT-102"
+          }
+        ],
+        "midtermExam": "2024-02-16T09:00:00",
+        "finalExam": "2024-03-21T13:00:00",
+        "status": "กำลังเรียน"
+      },
+      {
+        "id": "CS003",
+        "name": "การพัฒนาแอปพลิเคชันขั้นสูง",
+        "nameEng": "Advanced Application Development",
+        "section": 1,
+        "credits": 3,
+        "grade": null,
+        "instructor": "รศ.ดร.ธนวัฒน์ ชัยชนะ",
+        "schedule": [
+          {
+            "day": "ศุกร์",
+            "time": "13:00-16:00",
+            "room": "LAB-01"
+          }
+        ],
+        "midtermExam": "2024-02-14T13:00:00",
+        "finalExam": "2024-03-22T09:00:00",
+        "status": "กำลังเรียน"
+      },
+      {
+        "id": "CS004",
+        "name": "การฝึกงานเบื้องต้น",
+        "nameEng": "Introduction to Internship",
+        "section": 1,
+        "credits": 1,
+        "grade": null,
+        "instructor": "ผศ.ดร.พิชญ์ ปัญญา",
+        "schedule": [
+          {
+            "day": "จันทร์",
+            "time": "15:00-16:00",
+            "room": "ห้องประชุม 1"
+          }
+        ],
+        "midtermExam": null,
+        "finalExam": null,
+        "status": "กำลังเรียน"
+      }
+    ]
+  },
+  "previousSemesters": [
+    {
+      "academicYear": 2023,
+      "term": 1,
+      "registrationStatus": "ลงทะเบียนแล้ว",
+      "paymentStatus": "ชำระเงินแล้ว",
+      "registrationDate": "2023-08-15T10:30:45",
+      "totalCredits": 19,
+      "totalFee": 21500,
+      "gpa": 1.00,
+      "subjects": [
+        {
+          "id": "CS005",
+          "name": "การออกแบบระบบ",
+          "nameEng": "System Design",
+          "section": 1,
+          "credits": 3,
+          "grade": "F",
+          "instructor": "รศ.ดร.จักรพงษ์ สมบูรณ์",
+          "schedule": [
+            {
+              "day": "พุธ",
+              "time": "13:00-16:00",
+              "room": "IT-201"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        },
+        {
+          "id": "CS006",
+          "name": "หลักการพัฒนาซอฟต์แวร์",
+          "nameEng": "Principles of Software Development",
+          "section": 2,
+          "credits": 3,
+          "grade": "F",
+          "instructor": "ผศ.ดร.สายทิพย์ ศรีสุข",
+          "schedule": [
+            {
+              "day": "อังคาร",
+              "time": "09:00-12:00",
+              "room": "IT-202"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        },
+        {
+          "id": "CS007",
+          "name": "อัลกอริทึมขั้นสูง",
+          "nameEng": "Advanced Algorithms",
+          "section": 1,
+          "credits": 3,
+          "grade": "F",
+          "instructor": "รศ.ดร.กฤษณะ แสงงาม",
+          "schedule": [
+            {
+              "day": "ศุกร์",
+              "time": "09:00-12:00",
+              "room": "IT-203"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        },
+        {
+          "id": "CS008",
+          "name": "สถาปัตยกรรมคอมพิวเตอร์",
+          "nameEng": "Computer Architecture",
+          "section": 1,
+          "credits": 3,
+          "grade": "F",
+          "instructor": "ผศ.ดร.วรวิทย์ เทคโนโลยี",
+          "schedule": [
+            {
+              "day": "จันทร์",
+              "time": "13:00-16:00",
+              "room": "IT-204"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        },
+        {
+          "id": "CS009",
+          "name": "กลศาสตร์พื้นฐาน",
+          "nameEng": "Fundamental Mechanics",
+          "section": 2,
+          "credits": 3,
+          "grade": "F",
+          "instructor": "รศ.ดร.ภัทรา วิทยาศาสตร์",
+          "schedule": [
+            {
+              "day": "พฤหัสบดี",
+              "time": "09:00-12:00",
+              "room": "SCI-301"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        },
+        {
+          "id": "CS010",
+          "name": "ปฏิบัติการกลศาสตร์",
+          "nameEng": "Mechanics Laboratory",
+          "section": 4,
+          "credits": 1,
+          "grade": "F",
+          "instructor": "ผศ.ดร.อรุณี แสงจันทร์",
+          "schedule": [
+            {
+              "day": "พฤหัสบดี",
+              "time": "13:00-14:00",
+              "room": "LAB-SCI-01"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        },
+        {
+          "id": "CS011",
+          "name": "ภาษาอังกฤษสำหรับเทคโนโลยี",
+          "nameEng": "English for Technology",
+          "section": 5,
+          "credits": 3,
+          "grade": "F",
+          "instructor": "อ.เจมส์ แอนเดอร์สัน",
+          "schedule": [
+            {
+              "day": "อังคาร",
+              "time": "13:00-16:00",
+              "room": "LANG-401"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        }
+      ]
+    },
+    {
+      "academicYear": 2022,
+      "term": 3,
+      "registrationStatus": "ลงทะเบียนแล้ว",
+      "paymentStatus": "ชำระเงินแล้ว",
+      "registrationDate": "2023-06-01T11:15:30",
+      "totalCredits": 6,
+      "totalFee": 10000,
+      "gpa": 1.00,
+      "subjects": [
+        {
+          "id": "CS012",
+          "name": "การเขียนโค้ดเชิงปฏิบัติ",
+          "nameEng": "Practical Coding",
+          "section": 1,
+          "credits": 3,
+          "grade": "F",
+          "instructor": "ผศ.ดร.ศุภชัย โปรแกรม",
+          "schedule": [
+            {
+              "day": "พุธ",
+              "time": "13:00-16:00",
+              "room": "LAB-02"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        },
+        {
+          "id": "CS013",
+          "name": "กีฬากลางแจ้ง",
+          "nameEng": "Outdoor Sports",
+          "section": 2,
+          "credits": 1,
+          "grade": "F",
+          "instructor": "อ.ชัยวัฒน์ ร่างกาย",
+          "schedule": [
+            {
+              "day": "ศุกร์",
+              "time": "15:00-16:00",
+              "room": "สนามกีฬา 1"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        },
+        {
+          "id": "CS014",
+          "name": "วัฒนธรรมดิจิทัล",
+          "nameEng": "Digital Culture",
+          "section": 7,
+          "credits": 2,
+          "grade": "F",
+          "instructor": "ผศ.ดร.อนุรักษ์ วัฒนธรรม",
+          "schedule": [
+            {
+              "day": "จันทร์",
+              "time": "09:00-11:00",
+              "room": "HUM-101"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        }
+      ]
+    },
+    {
+      "academicYear": 2022,
+      "term": 2,
+      "registrationStatus": "ลงทะเบียนแล้ว",
+      "paymentStatus": "ชำระเงินแล้ว",
+      "registrationDate": "2022-12-20T14:20:10",
+      "totalCredits": 3,
+      "totalFee": 6000,
+      "gpa": 1.00,
+      "subjects": [
+        {
+          "id": "CS015",
+          "name": "พื้นฐานการเขียนโปรแกรม",
+          "nameEng": "Programming Basics",
+          "section": 1,
+          "credits": 3,
+          "grade": "F",
+          "instructor": "รศ.ดร.ปิติ ซอฟต์แวร์",
+          "schedule": [
+            {
+              "day": "อังคาร",
+              "time": "09:00-12:00",
+              "room": "IT-103"
+            }
+          ],
+          "status": "เรียนเสร็จสิ้น"
+        }
+      ]
+    }
+  ],
+  "availableCourses": [
+    {
+      "id": "CS005",
+      "name": "การออกแบบระบบ",
+      "nameEng": "System Design",
+      "section": 2,
+      "credits": 3,
+      "instructor": "รศ.ดร.จักรพงษ์ สมบูรณ์",
+      "availableSeats": 20,
+      "maxSeats": 40,
+      "schedule": [
+        {
+          "day": "พฤหัสบดี",
+          "time": "13:00-16:00",
+          "room": "IT-301"
+        }
+      ],
+      "midtermExam": "2024-02-13T13:00:00",
+      "finalExam": "2024-03-20T13:00:00",
+      "prerequisite": []
+    },
+    {
+      "id": "CS012",
+      "name": "การเขียนโค้ดเชิงปฏิบัติ",
+      "nameEng": "Practical Coding",
+      "section": 2,
+      "credits": 3,
+      "instructor": "ผศ.ดร.ศุภชัย โปรแกรม",
+      "availableSeats": 15,
+      "maxSeats": 30,
+      "schedule": [
+        {
+          "day": "จันทร์",
+          "time": "09:00-12:00",
+          "room": "LAB-03"
+        }
+      ],
+      "midtermExam": "2024-02-12T09:00:00",
+      "finalExam": "2024-03-18T09:00:00",
+      "prerequisite": ["CS015"]
+    },
+    {
+      "id": "CS015",
+      "name": "พื้นฐานการเขียนโปรแกรม",
+      "nameEng": "Programming Basics",
+      "section": 2,
+      "credits": 3,
+      "instructor": "รศ.ดร.ปิติ ซอฟต์แวร์",
+      "availableSeats": 25,
+      "maxSeats": 50,
+      "schedule": [
+        {
+          "day": "พุธ",
+          "time": "13:00-16:00",
+          "room": "IT-302"
+        }
+      ],
+      "midtermExam": "2024-02-14T13:00:00",
+      "finalExam": "2024-03-21T13:00:00",
+      "prerequisite": []
+    }
+  ]
+}
