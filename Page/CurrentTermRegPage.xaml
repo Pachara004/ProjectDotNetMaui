@@ -89,7 +89,7 @@
                                    TextColor="Black"
                                    HorizontalOptions="Center"/>
                             <Label x:Name="TotalCreditsLabel"
-                                   Text="{Binding User.CurrentSemester.TotalCredits}"
+                                   Text="{Binding TotalRegisteredCredits}"
                                    FontSize="28"
                                    FontAttributes="Bold"
                                    TextColor="Black"

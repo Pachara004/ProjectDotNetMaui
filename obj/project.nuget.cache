@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UN3sg2weNYs=",
+  "dgSpecHash": "64E059IAXco=",
   "success": true,
-  "projectFilePath": "C:\\DotNetMaui\\MiniprojectCross.csproj",
+  "projectFilePath": "C:\\ProjectDotNetMaui\\MiniprojectCross.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",

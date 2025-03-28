@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniprojectCross")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e7f68c1e639badfa9dacb83713222f03fa66ae1d")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniprojectCross")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniprojectCross")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

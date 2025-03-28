@@ -3196,11 +3196,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\DotNetMaui\\MiniprojectCross.csproj",
+      "projectUniqueName": "C:\\ProjectDotNetMaui\\MiniprojectCross.csproj",
       "projectName": "MiniprojectCross",
-      "projectPath": "C:\\DotNetMaui\\MiniprojectCross.csproj",
+      "projectPath": "C:\\ProjectDotNetMaui\\MiniprojectCross.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\DotNetMaui\\obj\\",
+      "outputPath": "C:\\ProjectDotNetMaui\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
